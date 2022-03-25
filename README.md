@@ -1,16 +1,12 @@
 # utopia_flutter_template
 
-Utopia USS - new project template
+Login demo screen using Utopia USS template
 
-## Getting Started
+## Info
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [x] Splash screen
+- [x] Log in screen
+- [x] Sign up screen
+- [x] Log in simlation (email schould be 1 character long, password should be 6 characters long)
+- [] Sign up simulation
+- [] Navigation in log in screen refactor
