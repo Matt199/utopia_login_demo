@@ -78,16 +78,6 @@ class LogInScreenView extends StatelessWidget {
                   text: "Log in",
                 ),
         ),
-        if (state.validateStatus == ValidateStatus.invalid)
-          const Padding(
-            padding: EdgeInsets.only(top: 8),
-            child: Text(
-              "email should be 1 char long, password should be 5 char long",
-              style: TextStyle(color: Colors.red),
-            ),
-          )
-        else
-          Container()
       ],
     );
   }

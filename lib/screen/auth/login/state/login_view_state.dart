@@ -30,14 +30,20 @@ LoginScreenState useLoginScreenState() {
   final emailState = useFieldState();
   final passwordState = useFieldState();
   final startValidateUser = useState(ValidateStatus.initial);
+  useSubmitState();
 
   Future<void> addUserToDatabase(BuildContext context) async {
-    // MARK: How to use validate in FieldState?????
     startValidateUser.value = ValidateStatus.inProgress;
-    if (emailState.value.isNotEmpty && passwordState.value.length > 5) {
+
+    final passwordIsValid = passwordState.validate(Validators.passwordWrong(
+        onWrongPassword: (onWrongPassword) => "Password is not Ok"));
+
+    final emailIsValid = emailState
+        .validate(Validators.notEmpty(onEmpty: (onEmpty) => "Emial is not Ok"));
+
+    if (passwordIsValid && emailIsValid) {
       await Future.delayed(const Duration(seconds: 2), () {});
       startValidateUser.value = ValidateStatus.validated;
-
       // TODO: LOL, I know
       final navigator = context.navigator;
 
